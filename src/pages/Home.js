@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Home.css'; // Import the Home-specific styles
+import './Home.css';
 
 const Home = () => {
   return (
     <div className="home">
-      {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
           <div className="hero-text">
@@ -19,7 +18,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Products Section */}
+      
       <section className="featured-products">
         <h2>Featured Products</h2>
         <div className="product-grid">
@@ -44,7 +43,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Call to Action Section */}
+
       <section className="cta-section">
         <h2>Join Our Newsletter</h2>
         <p>Get exclusive discounts and updates straight to your inbox.</p>

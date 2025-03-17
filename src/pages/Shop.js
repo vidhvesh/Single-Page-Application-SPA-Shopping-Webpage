@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProductCard from '../components/ProductCard';
-import './Shop.css'; // Import the Shop-specific styles
+import './Shop.css';
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -11,7 +11,7 @@ const Shop = () => {
   const [sortBy, setSortBy] = useState('price-asc');
 
   useEffect(() => {
-    // Fetch products
+    
     axios.get('https://fakestoreapi.com/products')
       .then(response => {
         setProducts(response.data);
@@ -19,19 +19,18 @@ const Shop = () => {
       })
       .catch(error => console.error('Error fetching products:', error));
 
-    // Fetch categories
     axios.get('https://fakestoreapi.com/products/categories')
       .then(response => setCategories(response.data))
       .catch(error => console.error('Error fetching categories:', error));
   }, []);
 
   useEffect(() => {
-    // Filter products by category
+    
     let filtered = selectedCategory === 'All' 
       ? products 
       : products.filter(product => product.category === selectedCategory);
 
-    // Sort products
+  
     if (sortBy === 'price-asc') {
       filtered.sort((a, b) => a.price - b.price);
     } else if (sortBy === 'price-desc') {
